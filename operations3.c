@@ -27,9 +27,9 @@ int stack_length(t_stack **stack)
 	int i;
 	t_stack *temp;
 
-	i = 1;
+	i = 0;
 	temp = *stack;
-	while (temp->next != NULL)
+	while (temp != NULL)
 	{
 		i++;
 		temp = temp->next;
@@ -37,36 +37,36 @@ int stack_length(t_stack **stack)
 	return (i);
 }
 
-int stack_max(t_stack **stack)
-{
-	t_stack *temp;
-	int max;
-
-	temp = *stack;
-	max = temp->value;
-	while (temp->next != NULL)
-	{
-		if (temp->value < temp->next->value)
-			max = temp->next->value;
-		temp = temp->next;
-	}
-	(*stack)->max = max;
-	return (max);
-}
-
-int stack_min(t_stack **stack)
-{
-	t_stack *temp;
-	int min;
-
-	temp = *stack;
-	min = temp->value;
-	while (temp->next != NULL)
-	{
-		if (temp->value > temp->next->value)
-			min = temp->next->value;
-		temp = temp->next;
-	}
-	(*stack)->min = min;
-	return (min);
-}
+//int stack_max(t_stack **stack)
+//{
+//	t_stack *temp;
+//	int max;
+//
+//	temp = *stack;
+//	max = temp->value;
+//	while (temp->next != NULL)
+//	{
+//		if (temp->value < temp->next->value)
+//			max = temp->next->value;
+//		temp = temp->next;
+//	}
+//	(*stack)->max = max;
+//	return (max);
+//}
+//
+//int stack_min(t_stack **stack)
+//{
+//	t_stack *temp;
+//	int min;
+//
+//	temp = *stack;
+//	min = temp->value;
+//	while (temp->next != NULL)
+//	{
+//		if (temp->value > temp->next->value)
+//			min = temp->next->value;
+//		temp = temp->next;
+//	}
+//	(*stack)->min = min;
+//	return (min);
+//}

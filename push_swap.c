@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void ft_sort(t_stack *a, t_stack *b, int argc)
+void ft_sort(t_stack *a, t_stack *b, t_data *data, int argc)
 {
 	if (argc <= 4)
 		ft_sort_three(&a);
@@ -8,21 +8,20 @@ void ft_sort(t_stack *a, t_stack *b, int argc)
 		ft_sort_four(&a, &b);
 	else if (argc <= 6)
 		ft_sort_five(&a, &b);
-	else if (argc <= 101)
-		ft_sort_hundred(&a, &b);
-	else if (argc <= 501)
-		ft_sort_fhundred(&a, &b);
+	else
+		ft_sort_large(&a, &b, &data);
 }
 
 int main(int argc, char **argv)
 {
 	t_stack *a;
 	t_stack *b;
+	t_data *data;
 
 	if (argc < 2)
 	{
 
-		ft_sort(a, b, argc);
+		ft_sort(a, b, data, argc);
 	}
 	stack_clear(&a);
 	stack_clear(&b);

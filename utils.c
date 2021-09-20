@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void ft_error(t_stack **a, t_stack **b)
+void ft_error(t_stacks *stack)
 {
 	stack_clear(a);
 	stack_clear(b);
