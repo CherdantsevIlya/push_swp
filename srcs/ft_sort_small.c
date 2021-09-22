@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void ft_sort_three(t_stack **a)
 {
@@ -19,7 +19,7 @@ void ft_sort_four(t_stack **a, t_stack **b)
 {
 	while (stack_length(a) != 3)
 	{
-		if (((*a)->value == (*a)->max || ((*a)->value) == (*a)->min)
+		if ((*a)->value == (*a)->max || (*a)->value == (*a)->min)
 			pb(a, b, 1);
 		else
 			ra(a, 1);
@@ -34,7 +34,7 @@ void ft_sort_five(t_stack **a, t_stack **b)
 {
 	while (stack_length(a) != 3)
 	{
-		if (((*a)->value == (*a)->max || ((*a)->value) == (*a)->min)
+		if ((*a)->value == (*a)->max || (*a)->value == (*a)->min)
 			pb(a, b, 1);
 		else
 			ra(a, 1);

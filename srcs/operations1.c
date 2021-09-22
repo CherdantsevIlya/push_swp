@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void sa(t_stack **a, int n)
 {
@@ -6,8 +6,8 @@ void sa(t_stack **a, int n)
 
 	if (*a == NULL)
 		return ;
-	temp = *a
-	*a = (*a)->next;
+	temp = *a;
+	(*a) = (*a)->next;
 	temp->next = (*a)->next;
 	(*a)->next = temp;
 	if (n == 1)

@@ -1,11 +1,11 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void sort_a_helper(t_stack **a, t_stack **b, t_data **data)
 {
 	if ((*a)->index == (*data)->index)
 	{
 		(*a)->step = -1;
-		ra(a, b, 1);
+		ra(a, 1);
 		(*data)->index++;
 	}
 	else if (((*a)->next->index == (*data)->index)
@@ -62,12 +62,10 @@ void sort_b_helper(t_stack **a, t_stack **b, t_data **data)
 
 void sort_b(t_stack **a, t_stack **b, t_data **data)
 {
-	int mid;
-
-	mid = stack_mid(b);
+	stack_mid(b);
 	while (stack_length(b))
 	{
-		if ((*b)->value < mid)
+		if ((*b)->value < (*b)->mid)
 			sort_b_helper(a, b, data);
 		else
 		{
@@ -82,16 +80,14 @@ void sort_b(t_stack **a, t_stack **b, t_data **data)
 
 void ft_sort_large(t_stack **a, t_stack **b, t_data **data)
 {
-	int mid;
-
-	mid = stack_mid(a);
+	stack_mid(a);
 	while (stack_length(a) - stack_length(b) > 1)
 	{
-		if ((*a)->value < mid)
+		if ((*a)->value < (*a)->mid)
 			pb(a, b, 1);
 		else
 			ra(a, 1);
 	}
-	sort_b(a, b);
+	sort_b(a, b, data);
 }
 

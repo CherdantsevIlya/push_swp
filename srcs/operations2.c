@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void ra(t_stack **a, int n)
 {
@@ -48,7 +48,7 @@ void rra(t_stack **a, int n)
 {
 	t_stack *tmp;
 	t_stack *first;
-	t_stack *last
+	t_stack *last;
 
 	if (*a == NULL)
 		return ;
@@ -68,7 +68,7 @@ void rrb(t_stack **b, int n)
 {
 	t_stack *tmp;
 	t_stack *first;
-	t_stack *last
+	t_stack *last;
 
 	if (*b == NULL)
 		return ;
