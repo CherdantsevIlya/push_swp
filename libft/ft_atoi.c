@@ -14,16 +14,20 @@
 
 int	ft_atoi(const char *str)
 {
-	int			i;
-	int			count;
-	long int	nbr;
+	int i;
+	int count;
+	long int nbr;
 
 	i = 0;
 	count = 1;
 	nbr = 0;
 	while (str[i] == '\n' || str[i] == '\r' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == ' ')
+		   || str[i] == '\v' || str[i] == '\f' || str[i] == ' ' ||
+		   str[i] == '\0')
+	{
+		if (str[i] == '\0')
 		i++;
+	}
 	if ((str[i] == '-' || str[i] == '+') && (ft_isdigit(str[i + 1])))
 	{
 		if (str[i] == '-')

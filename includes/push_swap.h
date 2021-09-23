@@ -46,6 +46,7 @@ int	stack_length(t_stack **stack);
 */
 
 void	ft_sort(t_stack *a, t_stack *b, t_data *data, int argc);
+void	ft_main_helper(t_stack *a, t_stack *b, t_data *data, int argc);
 
 /*
 **		ft_sort_small.c
@@ -95,7 +96,9 @@ int	ft_qs_main(int *array, int start, int end);
 */
 
 void	ft_init(t_stack *a, t_stack *b, t_data *data);
-int	ft_parsing(int argc, char **argv, t_stack *a);
-int	ft_empty_line(char *str);
+int	ft_parsing(int argc, char **argv);
+int	ft_spaceX(const char *str);
+int	ft_isnumber(const char *str);
+int	ft_valid(const char *str);
 
 #endif

@@ -12,34 +12,41 @@ void ft_sort(t_stack *a, t_stack *b, t_data *data, int argc)
 		ft_sort_large(&a, &b, &data);
 }
 
-int main(int argc, char **argv)
+void ft_main_helper(t_stack *a, t_stack *b, t_data *data, int argc)
 {
 	int i;
+
+	i = ft_index(&a);
+	if (i == 0)
+		ft_error(a, b, data, 0);
+	else if (i == -1)
+		ft_error(a, b, data, 1);
+	if (argc == 2)
+		ft_error(a, b, data, 2);
+	ft_sort(a, b, data, argc);
+}
+
+int main(int argc, char **argv)
+{
 	t_stack *a;
 	t_stack *b;
 	t_data *data;
 
+	if (argc < 2)
+		exit(1);
 	a = (t_stack *)malloc(sizeof(t_stack));
 	b = (t_stack *)malloc(sizeof(t_stack));
 	data = (t_data *)malloc(sizeof(t_data));
 	if (!a || !b || !data)
 		ft_error(a, b, data, 0);
 	ft_init(a, b, data);
-	if (argc > 1)
+	if (ft_parsing(argc, argv) == 1)
 	{
-		i = ft_parsing(argc, argv, a);
-		if (i == 1)
-			ft_error(a, b, data, 1);
-		else if (i == 2)
-			ft_error(a, b, data, 2);
-		i = ft_index(&a);
-		if (i == 0)
-			ft_error(a, b, data, 0);
-		else if (i == -1)
-			ft_error(a, b, data, 1);
-		else
-			ft_sort(a, b, data, argc);
+		if// проверить инты на макс и мин и засунуть в стек А
+		ft_main_helper(a, b, data, argc);
 	}
+	else if (ft_parsing(argc, argv) == -1)
+		ft_error(a, b, data, 1);
 	ft_error(a, b, data, 2);
 	return (0);
 }
