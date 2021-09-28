@@ -4,12 +4,14 @@ void stack_clear(t_stack **stack)
 {
 	t_stack *temp;
 
+	tmp = (*stack);
 	while (*stack != NULL)
 	{
 		temp = *stack;
 		*stack = (*stack)->next;
 		free(temp);
 	}
+	tmp = NULL;
 	free(stack);
 }
 

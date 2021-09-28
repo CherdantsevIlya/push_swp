@@ -77,6 +77,12 @@ void	stack_add_back(t_stack **stack, t_stack *new);
 t_stack	*stack_new(long int new);
 
 /*
+**		stack2.c
+*/
+
+int ft_push_stack(int argc, char **argv, t_stack **a)
+
+/*
 **		utils.c
 */
 
