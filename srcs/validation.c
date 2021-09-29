@@ -1,13 +1,16 @@
 #include "../includes/push_swap.h"
 
-void ft_init(t_stack *a, t_stack *b, t_data *data)
+t_data *ft_init(void)
 {
-	b = NULL;
+	t_data *data;
+
+	data = (t_data *)malloc(sizeof(t_data));
+	data->mid = 0;
+	data->max = 0;
+	data->min = 0;
 	data->index = 0;
-	a->mid = 0;
-	a->min = 0;
-	a->max = 0;
-	a->step = 0;
+	data->step = 0;
+	return (data);
 }
 
 int ft_valid(const char *str)
@@ -16,6 +19,9 @@ int ft_valid(const char *str)
 	int nbr;
 	int sign;
 
+	i = 0;
+	nbr = 0;
+	sign = 0;
 	while (str[i])
 	{
 		if (str[i] >= '0' && str[i] <= '9')
@@ -83,10 +89,10 @@ int ft_parsing(int argc, char **argv)
 				if (ft_valid(argv[i]))
 					n = 1;
 				else
-					n = -1;
+					return (0);
 			}
 			else
-				n = -1;
+				return (0);
 		}
 		i++;
 	}

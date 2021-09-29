@@ -1,4 +1,5 @@
-CC				= gcc -fsanitize=address
+#CC				= gcc -fsanitize=address
+CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror
 
 PUSH_SWAP		= push_swap

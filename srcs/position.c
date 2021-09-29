@@ -1,13 +1,17 @@
 #include "../includes/push_swap.h"
 
-int	ft_duplicate(int *array)
+int	ft_duplicate(int *index)
 {
 	int i;
+	int n;
 
+	n = 0;
 	i = 0;
-	while (array[i + 1])
+	while (index[n + 1] != '\0')
+		n++;
+	while (i < n - 1)
 	{
-		if (array[i] == array[i + 1])
+		if (index[i] == index[i + 1])
 			return (0);
 		i++;
 	}
@@ -89,7 +93,7 @@ int ft_index(t_stack **stack)
 	}
 	ft_quicksort(index, 0, stack_length(stack) - 1);
 	if (!ft_duplicate(index))
-		return (-1);
+		return (0);
 	ft_index_position(stack, index);
 	free(index);
 	return (1);

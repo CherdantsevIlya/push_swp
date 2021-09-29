@@ -37,7 +37,7 @@ int stack_length(t_stack **stack)
 	return (i);
 }
 
-void stack_mid(t_stack **stack)
+void stack_mid(t_stack **stack, t_data **data)
 {
 	t_stack *temp;
 	int i;
@@ -54,8 +54,8 @@ void stack_mid(t_stack **stack)
 		i++;
 	}
 	ft_quicksort(array, 0, stack_length(stack) - 1);
-	(*stack)->min = array[0];
-	(*stack)->max = array[stack_length(stack) - 1];
-	(*stack)->mid = array[(stack_length(stack) - 1) / 2];
+	(*data)->min = array[0];
+	(*data)->max = array[stack_length(stack) - 1];
+	(*data)->mid = array[(stack_length(stack) - 1) / 2];
 	free(array);
 }

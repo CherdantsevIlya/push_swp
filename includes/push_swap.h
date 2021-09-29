@@ -8,9 +8,6 @@
 typedef struct		s_stack
 {
 	int 			step;
-	int				mid;
-	int				min;
-	int 			max;
 	int 			index;
 	int 			value;
 	struct s_stack	*next;
@@ -18,6 +15,9 @@ typedef struct		s_stack
 
 typedef struct		s_data
 {
+	int				mid;
+	int				min;
+	int 			max;
 	int				step;
 	int 			index;
 }					t_data;
@@ -37,7 +37,7 @@ void	rr(t_stack **a, t_stack **b, int n);
 void	rra(t_stack **a, int n);
 void	rrb(t_stack **b, int n);
 void	rrr(t_stack **a, t_stack **b, int n);
-void	stack_mid(t_stack **stack);
+void	stack_mid(t_stack **stack, t_data **data);
 int	stack_sorted(t_stack **stack);
 int	stack_length(t_stack **stack);
 
@@ -53,8 +53,8 @@ void	ft_main_helper(t_stack *a, t_stack *b, t_data *data, int argc);
 */
 
 void	ft_sort_three(t_stack **a);
-void	ft_sort_four(t_stack **a, t_stack **b);
-void	ft_sort_five(t_stack **a, t_stack **b);
+void	ft_sort_four(t_stack **a, t_stack **b, t_data **data);
+void	ft_sort_five(t_stack **a, t_stack **b, t_data **data);
 
 /*
 **		ft_sort_large.c
@@ -77,12 +77,6 @@ void	stack_add_back(t_stack **stack, t_stack *new);
 t_stack	*stack_new(long int new);
 
 /*
-**		stack2.c
-*/
-
-int ft_push_stack(int argc, char **argv, t_stack **a)
-
-/*
 **		utils.c
 */
 
@@ -101,7 +95,7 @@ int	ft_qs_main(int *array, int start, int end);
 **		validation.c
 */
 
-void	ft_init(t_stack *a, t_stack *b, t_data *data);
+t_data *ft_init(void);
 int	ft_parsing(int argc, char **argv);
 int	ft_spaceX(const char *str);
 int	ft_isnumber(const char *str);

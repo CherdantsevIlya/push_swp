@@ -4,15 +4,14 @@ void stack_clear(t_stack **stack)
 {
 	t_stack *temp;
 
-	tmp = (*stack);
+	temp = (*stack);
 	while (*stack != NULL)
 	{
 		temp = *stack;
 		*stack = (*stack)->next;
 		free(temp);
 	}
-	tmp = NULL;
-	free(stack);
+	temp = NULL;
 }
 
 void stack_add_front(t_stack **stack, t_stack *new)

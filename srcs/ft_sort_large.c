@@ -62,10 +62,10 @@ void sort_b_helper(t_stack **a, t_stack **b, t_data **data)
 
 void sort_b(t_stack **a, t_stack **b, t_data **data)
 {
-	stack_mid(b);
+	stack_mid(b, data);
 	while (stack_length(b))
 	{
-		if ((*b)->value < (*b)->mid)
+		if ((*b)->value <= (*data)->mid)
 			sort_b_helper(a, b, data);
 		else
 		{
@@ -80,10 +80,9 @@ void sort_b(t_stack **a, t_stack **b, t_data **data)
 
 void ft_sort_large(t_stack **a, t_stack **b, t_data **data)
 {
-	stack_mid(a);
 	while (stack_length(a) - stack_length(b) > 1)
 	{
-		if ((*a)->value < (*a)->mid)
+		if ((*a)->value <= (*data)->mid)
 			pb(a, b, 1);
 		else
 			ra(a, 1);
