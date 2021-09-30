@@ -62,7 +62,7 @@ void	ft_sort_five(t_stack **a, t_stack **b, t_data **data);
 
 void	ft_sort_large(t_stack **a, t_stack **b, t_data **data);
 void	sort_b(t_stack **a, t_stack **b, t_data **data);
-void	sort_b_helper(t_stack **a, t_stack **b, t_data **data);
+void sort_b_helper(t_stack **a, t_stack **b, t_data **data, int *i);
 void	sort_a(t_stack **a, t_stack **b, t_data **data);
 void	sort_a_helper(t_stack **a, t_stack **b, t_data **data);
 
@@ -81,6 +81,7 @@ t_stack	*stack_new(long int new);
 */
 
 void	ft_error(t_stack *a, t_stack *b, t_data *data, int i);
+int64_t	ft_big_atoi(const char *str);
 
 /*
 **		position.c
@@ -92,13 +93,21 @@ void	ft_quicksort(int *array, int start, int end);
 int	ft_qs_main(int *array, int start, int end);
 
 /*
-**		validation.c
+**		parsing.c
 */
 
-t_data *ft_init(void);
 int	ft_parsing(int argc, char **argv);
 int	ft_spaceX(const char *str);
 int	ft_isnumber(const char *str);
 int	ft_valid(const char *str);
+int ft_integer(int argc, char **argv);
+
+/*
+**		init.c
+*/
+
+t_data	*ft_init(void);
+t_stack	*create_stack(void);
+t_stack	*copy_to_stack(int argc, char **argv);
 
 #endif

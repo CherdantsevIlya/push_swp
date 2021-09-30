@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   position.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pkari <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/30 16:19:39 by pkari             #+#    #+#             */
+/*   Updated: 2021/09/30 16:19:42 by pkari            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 int	ft_duplicate(int *index)
 {
-	int i;
-	int n;
+	int	i;
+	int	n;
 
 	n = 0;
 	i = 0;
@@ -18,9 +30,9 @@ int	ft_duplicate(int *index)
 	return (1);
 }
 
-void ft_quicksort(int *array, int start, int end)
+void	ft_quicksort(int *array, int start, int end)
 {
-	int n;
+	int	n;
 
 	if (start < end)
 	{
@@ -30,12 +42,12 @@ void ft_quicksort(int *array, int start, int end)
 	}
 }
 
-int ft_qs_main(int *array, int start, int end)
+int	ft_qs_main(int *array, int start, int end)
 {
-	int temp;
-	int mid;
-	int i;
-	int j;
+	int	temp;
+	int	mid;
+	int	i;
+	int	j;
 
 	mid = array[end];
 	i = start - 1;
@@ -59,8 +71,8 @@ int ft_qs_main(int *array, int start, int end)
 
 void	ft_index_position(t_stack **stack, int *index)
 {
-	t_stack *temp;
-	int i;
+	t_stack	*temp;
+	int		i;
 
 	temp = *stack;
 	while (temp)
@@ -73,11 +85,11 @@ void	ft_index_position(t_stack **stack, int *index)
 	}
 }
 
-int ft_index(t_stack **stack)
+int	ft_index(t_stack **stack)
 {
-	t_stack *temp;
-	int i;
-	int *index;
+	t_stack	*temp;
+	int		i;
+	int		*index;
 
 	i = stack_length(stack);
 	index = (int *)malloc(sizeof(int) * (i));

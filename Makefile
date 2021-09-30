@@ -20,7 +20,8 @@ SRCS_NAME		=	push_swap.c \
 					position.c \
 					stack.c \
 					utils.c \
-					validation.c \
+					init.c \
+					parsing.c \
 
 SRCS			= $(addprefix $(SRCS_DIR), $(SRCS_NAME))
 OBJS			= $(SRCS:.c=.o)

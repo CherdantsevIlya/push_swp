@@ -31,10 +31,6 @@ int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
 	{
 		nbr = (str[i] - '0') + (nbr * 10);
-//		if (nbr > 2147483647 && count == 1)
-//			return (-1);
-//		if (nbr > 2147483648 && count == -1)
-//			return (0);
 		i++;
 	}
 	return (nbr * count);

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations2.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pkari <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/30 16:29:48 by pkari             #+#    #+#             */
+/*   Updated: 2021/09/30 16:29:51 by pkari            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-void ra(t_stack **a, int n)
+void	ra(t_stack **a, int n)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (*a == NULL)
 		return ;
@@ -18,9 +30,9 @@ void ra(t_stack **a, int n)
 		write(1, "ra\n", 3);
 }
 
-void rb(t_stack **b, int n)
+void	rb(t_stack **b, int n)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (*b == NULL)
 		return ;
@@ -36,7 +48,7 @@ void rb(t_stack **b, int n)
 		write(1, "rb\n", 3);
 }
 
-void rr(t_stack **a, t_stack **b, int n)
+void	rr(t_stack **a, t_stack **b, int n)
 {
 	ra(a, 0);
 	rb(b, 0);
@@ -44,11 +56,11 @@ void rr(t_stack **a, t_stack **b, int n)
 		write(1, "rr\n", 3);
 }
 
-void rra(t_stack **a, int n)
+void	rra(t_stack **a, int n)
 {
-	t_stack *tmp;
-	t_stack *first;
-	t_stack *last;
+	t_stack	*tmp;
+	t_stack	*first;
+	t_stack	*last;
 
 	if (*a == NULL)
 		return ;
@@ -64,11 +76,11 @@ void rra(t_stack **a, int n)
 		write(1, "rra\n", 4);
 }
 
-void rrb(t_stack **b, int n)
+void	rrb(t_stack **b, int n)
 {
-	t_stack *tmp;
-	t_stack *first;
-	t_stack *last;
+	t_stack	*tmp;
+	t_stack	*first;
+	t_stack	*last;
 
 	if (*b == NULL)
 		return ;
