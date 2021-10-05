@@ -17,6 +17,7 @@ t_data	*ft_init(void)
 	t_data	*data;
 
 	data = (t_data *)malloc(sizeof(t_data));
+	data->main_min = 0;
 	data->mid = 0;
 	data->max = 0;
 	data->min = 0;

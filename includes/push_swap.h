@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pkari <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/05 15:20:46 by pkari             #+#    #+#             */
+/*   Updated: 2021/10/05 15:20:51 by pkari            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -5,26 +17,27 @@
 # include <unistd.h>
 # include "../libft/libft.h"
 
-typedef struct		s_stack
+typedef struct s_stack
 {
-	int 			step;
-	int 			index;
-	int 			value;
+	int				step;
+	int				index;
+	int				value;
 	struct s_stack	*next;
 }					t_stack;
 
-typedef struct		s_data
+typedef struct s_data
 {
+	int				main_min;
 	int				mid;
 	int				min;
-	int 			max;
+	int				max;
 	int				step;
-	int 			index;
+	int				index;
 }					t_data;
 
 /*
-**		operations123.c
-*/
+ **		operations123.c
+ */
 
 void	sa(t_stack **a, int n);
 void	sb(t_stack **b, int n);
@@ -38,73 +51,73 @@ void	rra(t_stack **a, int n);
 void	rrb(t_stack **b, int n);
 void	rrr(t_stack **a, t_stack **b, int n);
 void	stack_mid(t_stack **stack, t_data **data);
-int	stack_sorted(t_stack **stack);
-int	stack_length(t_stack **stack);
+int		stack_sorted(t_stack **stack);
+int		stack_length(t_stack **stack);
 
 /*
-**		push_swap.c
-*/
+ **		push_swap.c
+ */
 
 void	ft_sort(t_stack *a, t_stack *b, t_data *data, int argc);
 void	ft_main_helper(t_stack *a, t_stack *b, t_data *data, int argc);
 
 /*
-**		ft_sort_small.c
-*/
+ **		ft_sort_small.c
+ */
 
 void	ft_sort_three(t_stack **a);
 void	ft_sort_four(t_stack **a, t_stack **b, t_data **data);
 void	ft_sort_five(t_stack **a, t_stack **b, t_data **data);
 
 /*
-**		ft_sort_large.c
-*/
+ **		ft_sort_large.c
+ */
 
 void	ft_sort_large(t_stack **a, t_stack **b, t_data **data);
-void	sort_b(t_stack **a, t_stack **b, t_data **data);
-void sort_b_helper(t_stack **a, t_stack **b, t_data **data, int *i);
-void	sort_a(t_stack **a, t_stack **b, t_data **data);
-void	sort_a_helper(t_stack **a, t_stack **b, t_data **data);
+void	recursion(t_stack **a, t_stack **b, t_data **data);
+void	part_to_b(t_stack **a, t_stack **b, t_data **data, int first);
+void	part_to_a(t_stack **a, t_stack **b, t_data **data);
 
 /*
-**		stack.c
-*/
+ **		stack.c
+ */
 
 void	stack_clear(t_stack **stack);
 void	stack_add_front(t_stack **stack, t_stack *new);
-t_stack *stack_last(t_stack *stack);
 void	stack_add_back(t_stack **stack, t_stack *new);
 t_stack	*stack_new(long int new);
+t_stack	*stack_last(t_stack *stack);
 
 /*
-**		utils.c
-*/
+ **		utils.c
+ */
 
 void	ft_error(t_stack *a, t_stack *b, t_data *data, int i);
+int		find_next_index_in_b(t_stack **a, t_stack **b);
 int64_t	ft_big_atoi(const char *str);
 
 /*
-**		position.c
-*/
+ **		position.c
+ */
 
-int	ft_index(t_stack **stack);
 void	ft_index_position(t_stack **stack, int *index);
 void	ft_quicksort(int *array, int start, int end);
-int	ft_qs_main(int *array, int start, int end);
+int		ft_qs_main(int *array, int start, int end);
+int		ft_index(t_stack **stack);
 
 /*
-**		parsing.c
-*/
+ **		parsing.c
+ */
 
-int	ft_parsing(int argc, char **argv);
-int	ft_spaceX(const char *str);
-int	ft_isnumber(const char *str);
-int	ft_valid(const char *str);
-int ft_integer(int argc, char **argv);
+int		ft_parsing(int argc, char **argv);
+int		ft_spaceX(const char *str);
+int		ft_isnumber(const char *str);
+int		ft_valid(const char *str);
+int		ft_integer(int argc, char **argv);
 
 /*
-**		init.c
-*/
+ **		init.c
+ */
 
 t_data	*ft_init(void);
 t_stack	*create_stack(void);

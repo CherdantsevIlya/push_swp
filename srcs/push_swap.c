@@ -15,6 +15,7 @@
 void	ft_sort(t_stack *a, t_stack *b, t_data *data, int argc)
 {
 	stack_mid(&a, &data);
+	data->main_min = data->min;
 	if (argc <= 4)
 		ft_sort_three(&a);
 	else if (argc <= 5)

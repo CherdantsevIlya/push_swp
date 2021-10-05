@@ -22,6 +22,20 @@ void	ft_error(t_stack *a, t_stack *b, t_data *data, int i)
 	exit(1);
 }
 
+int	find_next_index_in_b(t_stack **a, t_stack **b)
+{
+	t_stack	*stack_b;
+
+	stack_b = *b;
+	while (stack_b != NULL)
+	{
+		if (stack_b->index == stack_last(*a)->index + 1)
+			return (1);
+		stack_b = stack_b->next;
+	}
+	return (0);
+}
+
 int64_t	ft_big_atoi(const char *str)
 {
 	int			i;

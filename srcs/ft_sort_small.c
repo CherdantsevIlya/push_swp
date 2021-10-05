@@ -34,8 +34,13 @@ void	ft_sort_four(t_stack **a, t_stack **b, t_data **data)
 {
 	while (stack_length(a) != 3)
 	{
-		if ((*a)->value == (*data)->max || (*a)->value == (*data)->min)
+		if ((*a)->index == 0 || (*a)->index == 4)
 			pb(a, b, 1);
+		else if (stack_last(*a)->index == 0 || stack_last(*a)->index == 4)
+		{
+			rra(a, 1);
+			pb(a, b, 1);
+		}
 		else
 			ra(a, 1);
 	}
@@ -49,8 +54,13 @@ void	ft_sort_five(t_stack **a, t_stack **b, t_data **data)
 {
 	while (stack_length(a) != 3)
 	{
-		if ((*a)->value == (*data)->max || (*a)->value == (*data)->min)
+		if ((*a)->index == 0 || (*a)->index == 4)
 			pb(a, b, 1);
+		else if (stack_last(*a)->index == 0 || stack_last(*a)->index == 4)
+		{
+			rra(a, 1);
+			pb(a, b, 1);
+		}
 		else
 			ra(a, 1);
 	}
