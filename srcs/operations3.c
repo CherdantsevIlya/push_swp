@@ -14,8 +14,10 @@
 
 void	rrr(t_stack **a, t_stack **b, int n)
 {
-	rra(a, 0);
-	rrb(b, 0);
+	if (stack_length(a) > 1)
+		rra(a, 0);
+	if (stack_length(b) > 1)
+		rrb(b, 0);
 	if (n == 1)
 		write(1, "rrr\n", 4);
 }

@@ -83,7 +83,7 @@ $(OBJS_DIR)%.o : %.c libft.h
 
 $(NAME): $(OBJECTS_PREFIXED)
 	@ar r $(NAME) $(OBJECTS_PREFIXED)
-	@echo "Libft Done !"
+	@printf "\x1b[42mLibft done ✅ \x1b[0m\n"
 
 all: $(NAME)
 

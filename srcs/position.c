@@ -19,9 +19,9 @@ int	ft_duplicate(int *index)
 
 	n = 0;
 	i = 0;
-	while (index[n + 1] != '\0')
+	while (index[n + 1])
 		n++;
-	while (i < n - 1)
+	while (i < n)
 	{
 		if (index[i] == index[i + 1])
 			return (0);

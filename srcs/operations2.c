@@ -50,8 +50,10 @@ void	rb(t_stack **b, int n)
 
 void	rr(t_stack **a, t_stack **b, int n)
 {
-	ra(a, 0);
-	rb(b, 0);
+	if (stack_length(a) > 1)
+		ra(a, 0);
+	if (stack_length(b) > 1)
+		rb(b, 0);
 	if (n == 1)
 		write(1, "rr\n", 3);
 }

@@ -12,41 +12,30 @@
 
 #include "libft.h"
 
-static char	*ft_copy1(char const *s1, char *strnew)
-{
-	size_t	i;
-
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		strnew[i] = s1[i];
-		i++;
-	}
-	return (strnew);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
 	char	*strnew;
+	int		n;
 
-	if (s1 && s2)
-	{
-		i = ft_strlen(s1);
-		j = ft_strlen(s2);
-		strnew = (char *)malloc(sizeof(char) * (i + j + 1));
-		if (!strnew)
-			return (NULL);
-		j = 0;
-		strnew = ft_copy1(s1, strnew);
-		while (s2[j] != '\0')
-		{
-			strnew[i + j] = s2[j];
-			j++;
-		}
-		strnew[i + j] = '\0';
-		return (strnew);
-	}
-	return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (NULL);
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	strnew = (char *)malloc(sizeof(char) * (i + j + 1));
+	if (!strnew)
+		return (NULL);
+	n = -1;
+	while (s1[++n])
+		strnew[n] = s1[n];
+	free(s1);
+	s1 = NULL;
+	n = -1;
+	while (s2[++n] != '\0')
+		strnew[n + i] = s2[n];
+	strnew[i + n] = '\0';
+	return (strnew);
 }

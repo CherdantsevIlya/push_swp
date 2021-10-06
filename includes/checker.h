@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkari <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 15:20:46 by pkari             #+#    #+#             */
-/*   Updated: 2021/10/05 15:20:51 by pkari            ###   ########.fr       */
+/*   Created: 2021/10/06 18:13:50 by pkari             #+#    #+#             */
+/*   Updated: 2021/10/06 18:13:53 by pkari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
+
+# define BUFFER_SIZE 1000
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
+# include <fcntl.h>
 # include "../libft/libft.h"
 
 typedef struct s_stack
@@ -55,38 +59,13 @@ int		stack_sorted(t_stack **stack);
 int		stack_length(t_stack **stack);
 
 /*
- **		push_swap.c
+ **		checker.c
  */
 
-void	ft_sort(t_stack *a, t_stack *b, t_data *data, int argc);
-void	ft_main_helper(t_stack *a, t_stack *b, t_data *data, int argc);
-
-/*
- **		ft_sort_small.c
- */
-
-void	ft_sort_three(t_stack **a);
-void	ft_sort_four(t_stack **a, t_stack **b, t_data **data);
-void	ft_sort_five(t_stack **a, t_stack **b, t_data **data);
-
-/*
- **		ft_sort_large.c
- */
-
-void	ft_sort_large(t_stack **a, t_stack **b, t_data **data);
-void	recursion(t_stack **a, t_stack **b, t_data **data);
-void	part_to_b(t_stack **a, t_stack **b, t_data **data, int first);
-void	part_to_a(t_stack **a, t_stack **b, t_data **data);
-
-/*
- **		stack.c
- */
-
-void	stack_clear(t_stack **stack);
-void	stack_add_front(t_stack **stack, t_stack *new);
-void	stack_add_back(t_stack **stack, t_stack *new);
-t_stack	*stack_new(long int new);
-t_stack	*stack_last(t_stack *stack);
+void	ft_checker_helper(t_stack **a, t_stack **b, t_data **data, int argc);
+int		check_stack_sorted(t_stack **a, t_stack **b);
+void	ft_read_lines(t_stack **a, t_stack **b, t_data **data);
+void	ft_read_operations(char *line, t_stack **a, t_stack **b, t_data **data);
 
 /*
  **		utils.c
@@ -123,5 +102,24 @@ int		ft_integer(int argc, char **argv);
 t_data	*ft_init(void);
 t_stack	*create_stack(void);
 t_stack	*copy_to_stack(int argc, char **argv);
+
+/*
+ **		stack.c
+ */
+
+void	stack_clear(t_stack **stack);
+void	stack_add_front(t_stack **stack, t_stack *new);
+void	stack_add_back(t_stack **stack, t_stack *new);
+t_stack	*stack_new(long int new);
+t_stack	*stack_last(t_stack *stack);
+
+/*
+ **		get_next_line.c
+ */
+
+int		get_next_line(int fd, char **line);
+int		ft_eof(char **line, int br);
+int		ft_find_i(const char *reminder, int c);
+int		ft_check_reminder(char *reminder, char **line, int i);
 
 #endif
