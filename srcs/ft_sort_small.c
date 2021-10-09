@@ -34,9 +34,9 @@ void	ft_sort_four(t_stack **a, t_stack **b, t_data **data)
 {
 	while (stack_length(a) != 3)
 	{
-		if ((*a)->index == 0 || (*a)->index == 4)
+		if ((*a)->index == 0 || (*a)->index == 3)
 			pb(a, b, 1);
-		else if (stack_last(*a)->index == 0 || stack_last(*a)->index == 4)
+		else if (stack_last(*a)->index == 0 || stack_last(*a)->index == 3)
 		{
 			rra(a, 1);
 			pb(a, b, 1);

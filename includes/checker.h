@@ -82,8 +82,8 @@ int64_t	ft_big_atoi(const char *str);
 void	ft_index_position(t_stack **stack, int *index);
 void	ft_quicksort(int *array, int start, int end);
 int		ft_qs_main(int *array, int start, int end);
-int		ft_index(t_stack **stack);
-int		ft_duplicate(int *index);
+void	ft_index(t_stack **a, t_stack **b, t_data **data);
+int		ft_duplicate(int *index, int size);
 
 /*
  **		parsing.c
@@ -110,7 +110,6 @@ t_stack	*copy_to_stack(int argc, char **argv);
 void	stack_clear(t_stack **stack);
 void	stack_add_front(t_stack **stack, t_stack *new);
 void	stack_add_back(t_stack **stack, t_stack *new);
-t_stack	*stack_new(long int new);
 t_stack	*stack_last(t_stack *stack);
 
 /*

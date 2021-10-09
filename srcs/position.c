@@ -12,16 +12,12 @@
 
 #include "../includes/push_swap.h"
 
-int	ft_duplicate(int *index)
+int	ft_duplicate(int *index, int size)
 {
 	int	i;
-	int	n;
 
-	n = 0;
 	i = 0;
-	while (index[n + 1])
-		n++;
-	while (i < n)
+	while (i < size)
 	{
 		if (index[i] == index[i + 1])
 			return (0);
@@ -85,17 +81,15 @@ void	ft_index_position(t_stack **stack, int *index)
 	}
 }
 
-int	ft_index(t_stack **stack)
+void	ft_index(t_stack **a, t_stack **b, t_data **data)
 {
 	t_stack	*temp;
 	int		i;
 	int		*index;
 
-	i = stack_length(stack);
-	index = (int *)malloc(sizeof(int) * (i));
-	if (!index)
-		return (0);
-	temp = *stack;
+	i = stack_length(a);
+	index = (int *)malloc(i * sizeof(int));
+	temp = *a;
 	i = 0;
 	while (temp)
 	{
@@ -103,10 +97,9 @@ int	ft_index(t_stack **stack)
 		temp = temp->next;
 		i++;
 	}
-	ft_quicksort(index, 0, stack_length(stack) - 1);
-	if (!ft_duplicate(index))
-		return (0);
-	ft_index_position(stack, index);
+	ft_quicksort(index, 0, stack_length(a) - 1);
+	if (!ft_duplicate(index, stack_length(a) - 1))
+		ft_error(*a, *b, *data, 1);
+	ft_index_position(a, index);
 	free(index);
-	return (1);
 }

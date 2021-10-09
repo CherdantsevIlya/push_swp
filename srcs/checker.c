@@ -77,8 +77,7 @@ int	check_stack_sorted(t_stack **a, t_stack **b)
 
 void	ft_checker_helper(t_stack **a, t_stack **b, t_data **data, int argc)
 {
-	if (!ft_index(a))
-		ft_error(*a, *b, *data, 1);
+	ft_index(a, b, data);
 	if (argc == 2)
 		ft_error(*a, *b, *data, 0);
 	ft_read_lines(a, b, data);
