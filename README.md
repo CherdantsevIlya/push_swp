@@ -44,6 +44,31 @@ sorts the integer arguments received.
 + **rrb** : reverse rotate b - shift down all elements of stack b by 1. The last element becomes the first one.
 + **rrr** : rra and rrb at the same time.
 
+start:
+
+```c
+ ./push_swap 5 4 8 9 1 (e.g.)
+```
+output:
+
+```c
+ rra
+ pb
+ rra
+ pb
+ sa
+ pa
+ ra
+ pa
+```
+
+___
+
+## 🧮 **How it works?**
+
+The algorithm is based on ***quicksort*** (recursive sorting with the search for the median element and the transfer of elements less or more than the median to another stack)
+
+![GIF](https://github.com/CherdantsevIlya/push_swp/blob/master/content/push_swap.gif)
 ___
 
 ## 📌 **Useful links**
