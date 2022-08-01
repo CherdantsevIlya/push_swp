@@ -4,25 +4,6 @@
 
 ___
 
-## :memo: **About**
-
-_This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves. To make this happen, you will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting_.
-
-### *Objectives*  
-> + Sorting algorithms
-> + Battery concept and handling elements
-> + Algorithm implementation
-
-### *Skills*
-> + Unix
-> + Rigor
-> + Imperative programming
-> + Algorithms & AI
-
-For detailed information, refer to the [**subject of this project**](https://github.com/CherdantsevIlya/push_swp/blob/master/content/en.subject.pdf).
-
-___
-
 ## 🚀 **Description**
 
 The Push_swap project is a very simple and highly effective algorithm project: data will need to be sorted. You have at your disposal a set of int values, 2 stacks and a set of instructions to manipulate both stacks.
@@ -61,6 +42,8 @@ output:
  ra
  pa
 ```
+
+###### *For detailed information, refer to the [**subject of this project**](https://github.com/CherdantsevIlya/push_swp/blob/master/content/en.subject.pdf).*
 
 ___
 
